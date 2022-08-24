@@ -43,7 +43,7 @@ h2{
 
 input{
     width: 100%;
-    height: 30px;
+    height: 35px;
     background: transparent;
     outline: none;
     border: none;
@@ -53,7 +53,21 @@ input{
 
 .input-field {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
+
+#email, #senha{
+    padding-left: 120px;
+}
+
+label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(18px);
+    transition: .25s ease-in-out;
+}
+
+
 
 
