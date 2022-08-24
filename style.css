@@ -47,13 +47,14 @@ input{
     background: transparent;
     outline: none;
     border: none;
-    border-bottom: 2px solid rgba(223, 196, 196, 0.849);
+    border-bottom: 1px solid rgba(223, 196, 196, 0.849);
     color: rgb(235, 198, 198);
+    transition: .25s ease-in-out;
 }
 
 .input-field {
-    position: relative;
-    margin-bottom: 25px;
+    position:relative;
+    margin-bottom:20px;
 }
 
 #email, #senha{
@@ -61,12 +62,33 @@ input{
 }
 
 label{
-    position: absolute;
-    top: 0;
-    left: 0;
+    position:absolute;
+    top:0;
+    left:0;
+    color: #000;
     transform: translateY(18px);
     transition: .25s ease-in-out;
 }
+
+input:focus{
+    border-bottom: 2px solid rgba(167, 20, 20, 0.705);
+    box-shadow: 0 1px 0 0 rgba(167, 20, 20, 0.705);
+    transition: .25s;
+}
+
+input:focus + label{
+    transform: translateX(-14px);
+    color: rgba(36, 9, 9, 0.781) ;
+    font-size: 18px;
+}
+
+input:not(:placeholder-shown) + label{
+    transform: translateX(-14px);
+    color: rgba(36, 9, 9, 0.781) ;
+    font-size: 18px;
+}
+
+
 
 
 
