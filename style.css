@@ -88,6 +88,15 @@ input:not(:placeholder-shown) + label{
     font-size: 20px;
 }
 
+button{
+    padding: 12px 30px; 
+    margin: 20px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    background: rgba(135, 135, 160, 0.74);
+    border: 2px solid #0000;
+    cursor: pointer;
+}
 
 
 
