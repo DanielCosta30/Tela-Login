@@ -93,15 +93,29 @@ button{
     margin: 20px;
     text-transform: uppercase;
     border-radius: 20px;
-    background: rgba(135, 135, 160, 0.74);
-    border: 2px solid #0000;
+    background: transparent;
+    border: 1px solid #ffff;
     cursor: pointer;
+    transition: .30s;
+}
+
+button:hover{
+    background: rgba(204, 29, 29, 0.705);
 }
 
 .button{
     text-align: center;
 }
 
+a{
+    text-decoration: none;
+    color: #000;
+    transition: .30s;
+}
+
+a:hover{
+    color:rgba(36, 9, 9, 0.781) ;
+}
 
 
 
