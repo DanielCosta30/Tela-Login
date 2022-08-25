@@ -21,3 +21,6 @@ if(inputSenha.getAttribute('type') == 'password'){
     inputSenha.setAttribute('type', 'password')
   }
 })
+
+function cadastrar(){
+}
