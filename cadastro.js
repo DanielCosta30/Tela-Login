@@ -1,18 +1,22 @@
 var btn = document.querySelector('#verSenha')
-var Confirmbtn = document.querySelector('#verConfirmSenha')
+var confirmbtn = document.querySelector('#verConfirmSenha')
 
 
 var email = document.querySelector('#email')
 var labelemail = document.querySelector('#labelemail')
-var validemail = false;
+var validemail = false
 
 var senha = document.querySelector('#senha')
 var labelsenha = document.querySelector('#labelSenha')
+var validsenha = false
 
 var confirmsenha = document.querySelector('#confirmsenha')
 var labelconfirmsenha = document.querySelector('#labelconfirmsenha')
-var validconfirmsenha = false;
+var validconfirmsenha = false
 
+
+let msgError = document.querySelector('#msgError')
+let msgSuccess = document.querySelector('#msgSuccess')
 
 /* validação dos input---->*/
 
@@ -20,12 +24,26 @@ email.addEventListener('keyup', () => {
     if(email.value.length <= 5){
     labelemail.setAttribute('style', 'color: red ')
     labelemail.innerHTML = 'email *Email inválido'
-    validemail = false;
+    validemail = false
    
  } else {
     labelemail.setAttribute('style', 'color: #000 ')
     labelemail.innerHTML ='Email:'
-    validemail = true;  
+    validemail = true
+ }
+
+})
+
+senha.addEventListener('keyup', () => {
+    if(senha.value.length <= 5){
+    labelsenha.setAttribute('style', 'color: red ')
+    labelsenha.innerHTML = 'Senha *com no minímo 6 digito'
+    validsenha = false
+   
+ } else {
+    labelsenha.setAttribute('style', 'color: #000 ')
+    labelsenha.innerHTML ='Senha:'
+    validsenha = true; 
 
  }
 
@@ -35,31 +53,40 @@ confirmsenha.addEventListener('keyup', () => {
     if(senha.value != confirmsenha.value){
     labelconfirmsenha.setAttribute('style', 'color: red ')
     labelconfirmsenha.innerHTML = 'Confirma sua senha *Não conferem'
-    validconfirmsenha = false;
+    validconfirmsenha = false
    
     } else {
     labelconfirmsenha.setAttribute('style', 'color: #000 ')
     labelconfirmsenha.innerHTML ='Confirme sua senha :'
-    validconfirmsenha = true;      
+    validconfirmsenha = true      
     }   
 })
 
 /*  <------*/
 
+/*  função cadstrar ---->*/
 
-function cadastrar(){  
-    if (validemail && validconfirmsenha){
-    msgSuccess.setAttribute('style', 'display: block')
-    msgSuccess.innerHTML = '<strong>Cadastrando usuário...</strong>'
-    msgError.setAttribute('style', 'display: none')
-    msgError.innerHTML = ''
-} else{
-    msgError.setAttribute('style', 'display: block')
-    msgError.innerHTML = '<strong>Preencha todos os campos corretamente antes de cadastrar</strong>'
-    msgSuccess.innerHTML = ''
-    msgSuccess.setAttribute('style', 'display: none')
-} 
-}
+var cadastrarusuario = document.querySelector('.cadastrar-usuario');
+
+cadastrarusuario.addEventListener ("click", function(event) {
+    event.preventDefault();
+ 
+    if (validemail && validconfirmsenha && validsenha){
+        msgSuccess.setAttribute('style', 'display: block')
+        msgSuccess.innerHTML = 'Cadastro realizado com sucesso'
+        msgError.setAttribute('style', 'display: none')
+        msgError.innerHTML = ''
+    
+    } else {
+        msgError.setAttribute('style', 'display: block')
+        msgError.innerHTML = 'Prencha todos so campos corretamente'
+        msgSuccess.innerHTML = ''
+        msgSuccess.setAttribute('style', 'display: none')
+    }
+})
+
+/*  <------*/
+
 
 /*  visualizar senha ---->*/
 
@@ -74,7 +101,7 @@ if(inputSenha.getAttribute('type') == 'password'){
 })
 
 
-Confirmbtn.addEventListener('click',()=>{
+confirmbtn.addEventListener('click',()=>{
     var inputConfirmSenha = document.querySelector('#confirmsenha')
 
 if(inputConfirmSenha.getAttribute('type') == 'password'){
