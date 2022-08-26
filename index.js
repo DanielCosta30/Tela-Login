@@ -32,6 +32,19 @@ var uservalid = {
     email:'',
     senha:''
 }
+    listauser = JSON.parse(localStorage.getItem('listauser'))
+
+    /*ForEach  vai vazer minha lsita item por item  em cada lista*/
+
+    listauser.forEach((item) =>{    
+        if (email.value == item.emailcad || senha.value == item.senhacad){
+            uservalid={
+                email: item.emailcad,
+                senha: item.senhacad
+            }
+            
+        }
+  }) 
 
 }
 
