@@ -72,10 +72,30 @@ cadastrarusuario.addEventListener ("click", function(event) {
     event.preventDefault();
  
     if (validemail && validconfirmsenha && validsenha){
+        var listauser = JSON.parse(localStorage.getItem('listauser') || '[]')
+
+        listauser.push(
+            {
+
+             emailcad: email.value,
+             senhacad: senha.value
+        }      
+        )
+
+        localStorage.setItem('listauser', JSON.stringify(listauser))
+
+
         msgSuccess.setAttribute('style', 'display: block')
         msgSuccess.innerHTML = 'Cadastro realizado com sucesso'
         msgError.setAttribute('style', 'display: none')
         msgError.innerHTML = ''
+        
+        setTimeout(()=> {
+
+        window.location.href='file:///C:/Users/Daniel%20Costa/Desktop/MENTORIA/Tela_Login/index.html'
+
+        }, 1000)
+        
     
     } else {
         msgError.setAttribute('style', 'display: block')
