@@ -48,8 +48,17 @@ confirmsenha.addEventListener('keyup', () => {
 
 
 function cadastrar(){  
-    if (validemail && validconfirmsenha )
-
+    if (validemail && validconfirmsenha){
+    msgSuccess.setAttribute('style', 'display: block')
+    msgSuccess.innerHTML = '<strong>Cadastrando usuário...</strong>'
+    msgError.setAttribute('style', 'display: none')
+    msgError.innerHTML = ''
+} else{
+    msgError.setAttribute('style', 'display: block')
+    msgError.innerHTML = '<strong>Preencha todos os campos corretamente antes de cadastrar</strong>'
+    msgSuccess.innerHTML = ''
+    msgSuccess.setAttribute('style', 'display: none')
+} 
 }
 
 /*  visualizar senha ---->*/
