@@ -92,7 +92,7 @@ cadastrarusuario.addEventListener ("click", function(event) {
         
         setTimeout(()=> {
 
-        window.location.href='file:///C:/Users/Daniel%20Costa/Desktop/MENTORIA/Tela_Login/index.html'
+        window.location.href='./index.html'
 
         }, 1000)
         
