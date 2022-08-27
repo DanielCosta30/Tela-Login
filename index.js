@@ -49,7 +49,7 @@ entralogin.addEventListener("click", function (event) {
 
   if (email.value == uservalid.email && senha.value == uservalid.senha) {
 
-    window.location.href='file:///C:/Users/Daniel%20Costa/Desktop/MENTORIA/Tela_Login/inicio.html'
+    window.location.href='./inicio.html'
     
   } else {
 
