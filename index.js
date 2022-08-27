@@ -29,7 +29,7 @@ entralogin.addEventListener("click", function (event) {
 
   var msgError = document.querySelector("#msgError");
   var listauser = [];
-  
+
   var uservalid = {
     email: "",
     senha: "",
